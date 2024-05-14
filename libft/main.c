@@ -225,8 +225,7 @@ void testFtMemset() {
 	printf("After: ");
 	printArray(buffer2, sizeof(buffer2));
 	printf("\n\n");
-}
-/*
+
 	// Test Case 4: Testing with overlapping memory areas
 	char buffer3[] = "abcdefgh";
 	printf("Test Case 4: b = \"abcdefgh\", c = 'x', len = 4 (Overlapping memory areas)\n");
@@ -313,6 +312,7 @@ void testFtBzero() {
 	printMemory(buffer4, sizeof(buffer4));
 	printf("\n\n");
 }
+/*
 
 size_t custom_strcspn(const char *s, const char *reject) {
     const char *p, *r;
@@ -1874,9 +1874,9 @@ int main(void)
 		case 7:
 			testFtMemset();
 			break ;
-		// case 8:
-		// 	testFtBzero();
-		// 	break ;
+		case 8:
+			testFtBzero();
+			break ;
 		// case 9:
 		// 	testFtMemcpy();
 		// 	break ;
