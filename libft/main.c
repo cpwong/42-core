@@ -388,7 +388,6 @@ void testFtMemcpy() {
 	ft_memcpy(customDst, customSrc, n);
 	printf("After: dst = \"%s\"\nExpected: <Depends on input>\n\n", customDst);
 }
-/*
 
 void testFtMemmove() {
     clearScreen();
@@ -419,6 +418,20 @@ void testFtMemmove() {
     }
     printf("\n\n");
 
+    int dst2a[5] = {1, 2, 3, 4, 5};
+    printf("Test Case 2a: dest = {1, 2, 3, 4, 5}, src = dest - 1, n = 3\n");
+    printf("Before: dest = ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", dst2a[i]);
+    }
+    printf("\n");
+    ft_memmove(dst2a, dst2a - 1, 3 * sizeof(int));
+    printf("After: dest = ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", dst2a[i]);
+    }
+    printf("\n\n");
+
     // Test case 3: NULL pointers
     printf("Test Case 3: NULL pointers\n");
     char *nullPtr = NULL;
@@ -444,6 +457,7 @@ void testFtMemmove() {
     ft_memmove(customDst, customSrc, n);
     printf("After: dest = \"%s\"\n\n", customDst);
 }
+/*
 
 void testFtStrlcpy() {
 	clearScreen();
@@ -1880,9 +1894,9 @@ int main(void)
 		case 9:
 			testFtMemcpy();
 			break ;
-		// case 10:
-		// 	testFtMemmove();
-		// 	break ;
+		case 10:
+			testFtMemmove();
+			break ;
 		// case 11:
 		// 	testFtStrlcpy();
 		// 	break ;
