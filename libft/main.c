@@ -90,7 +90,6 @@ void testFtIsalnum() {
 	printf("Result: %d\n\n", ft_isalnum(customChar));
 }
 
-/*
 void testFtIsascii() {
 	clearScreen();
 	printf("Function: int ft_isascii(int c)\n");
@@ -226,7 +225,8 @@ void testFtMemset() {
 	printf("After: ");
 	printArray(buffer2, sizeof(buffer2));
 	printf("\n\n");
-
+}
+/*
 	// Test Case 4: Testing with overlapping memory areas
 	char buffer3[] = "abcdefgh";
 	printf("Test Case 4: b = \"abcdefgh\", c = 'x', len = 4 (Overlapping memory areas)\n");
@@ -1862,18 +1862,18 @@ int main(void)
 		case 3:
 			testFtIsalnum();
 			break ;
-		// case 4:
-		// 	testFtIsascii();
-		// 	break ;
-		// case 5:
-		// 	testFtIsprint();
-		// 	break ;
-		// case 6:
-		// 	testFtStrlen();
-		// 	break ;
-		// case 7:
-		// 	testFtMemset();
-		// 	break ;
+		case 4:
+			testFtIsascii();
+			break ;
+		case 5:
+			testFtIsprint();
+			break ;
+		case 6:
+			testFtStrlen();
+			break ;
+		case 7:
+			testFtMemset();
+			break ;
 		// case 8:
 		// 	testFtBzero();
 		// 	break ;
