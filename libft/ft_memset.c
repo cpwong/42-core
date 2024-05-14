@@ -2,12 +2,12 @@
 
 void	*ft_memset(void *src, int c, size_t len)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 
 	if (!src)
 		return (NULL);
-	ptr = (char *)src;
+	ptr = (unsigned char *)src;
 	while (len-- > 0)
-		*ptr++ = (char)c;
+		*ptr++ = (unsigned char)c;
 	return (ptr);
 }

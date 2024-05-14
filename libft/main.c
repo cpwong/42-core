@@ -312,7 +312,6 @@ void testFtBzero() {
 	printMemory(buffer4, sizeof(buffer4));
 	printf("\n\n");
 }
-/*
 
 size_t custom_strcspn(const char *s, const char *reject) {
     const char *p, *r;
@@ -389,6 +388,7 @@ void testFtMemcpy() {
 	ft_memcpy(customDst, customSrc, n);
 	printf("After: dst = \"%s\"\nExpected: <Depends on input>\n\n", customDst);
 }
+/*
 
 void testFtMemmove() {
     clearScreen();
@@ -1877,9 +1877,9 @@ int main(void)
 		case 8:
 			testFtBzero();
 			break ;
-		// case 9:
-		// 	testFtMemcpy();
-		// 	break ;
+		case 9:
+			testFtMemcpy();
+			break ;
 		// case 10:
 		// 	testFtMemmove();
 		// 	break ;

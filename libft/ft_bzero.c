@@ -2,11 +2,11 @@
 
 void	ft_bzero(void *src, size_t len)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 
 	if (!src)
 		return ;
-	ptr = (char *)src;
+	ptr = (unsigned char *)src;
 	while (len-- > 0)
 		*ptr++ = '\0';
 }
