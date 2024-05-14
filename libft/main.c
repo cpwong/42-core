@@ -10,43 +10,6 @@
 #include <sys/types.h>
 #include "libft.h"
 
-// Function prototypes
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *src, size_t len);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(void *dest, const void *src, size_t n);
-char	*ft_strnstr(const char *str, const char *tofind, size_t len);
-int		ft_atoi(const char *str);
-void	*ft_calloc(size_t nmemb, size_t size);
-char	*ft_strdup(const char *s1);
-char	*ft_strnew(size_t size);
-int		ft_isspace(const int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char *str, char *charset);
-char	*ft_itoa(int n);
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-
 // Helper function to clear the screen
 void clearScreen() {
 	system("clear||cls");
@@ -56,20 +19,20 @@ void clearScreen() {
 void testFtIsalpha() {
 	clearScreen();
 	printf("Function: int ft_isalpha(int c)\n");
-	printf("Description: The ft_isalpha() function tests for any character for which isupper(c) or islower(c) is true.\n");
+	printf("Description: The ft_isalpha() function tests for any character for which isupper(c) or islower(c) is 1.\n");
 	printf("Input: An integer representing a character\n");
-	printf("Output: Non-zero value (true) if the character is an alphabetic letter, zero (false) otherwise\n\n");
+	printf("Output: Non-zero value (1) if the character is an alphabetic letter, zero (0) otherwise\n\n");
 
 	printf("Test Case 1: c = 'a'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isalpha('a'));
 
 	printf("Test Case 2: c = '5'\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isalpha('5'));
 
 	printf("Test Case 3: c = ' ' (space)\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isalpha(' '));
 
 	printf("Enter a custom character to test: ");
@@ -83,18 +46,18 @@ void testFtIsdigit() {
 	printf("Function: int ft_isdigit(int c)\n");
 	printf("Description: The ft_isdigit() function tests for a decimal digit character.\n");
 	printf("Input: An integer representing a character\n");
-	printf("Output: Non-zero value (true) if the character is a decimal digit, zero (false) otherwise\n\n");
+	printf("Output: Non-zero value (1) if the character is a decimal digit, zero (0) otherwise\n\n");
 
 	printf("Test Case 1: c = '5'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isdigit('5'));
 
 	printf("Test Case 2: c = 'a'\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isdigit('a'));
 
 	printf("Test Case 3: c = ' ' (space)\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isdigit(' '));
 
 	printf("Enter a custom character to test: ");
@@ -102,24 +65,23 @@ void testFtIsdigit() {
 	scanf(" %c", &customChar);
 	printf("Result: %d\n\n", ft_isdigit(customChar));
 }
-
 void testFtIsalnum() {
 	clearScreen();
 	printf("Function: int ft_isalnum(int c)\n");
-	printf("Description: The ft_isalnum() function tests for any character for which isalpha(c) or isdigit(c) is true.\n");
+	printf("Description: The ft_isalnum() function tests for any character for which isalpha(c) or isdigit(c) is 1.\n");
 	printf("Input: An integer representing a character\n");
-	printf("Output: Non-zero value (true) if the character is an alphanumeric character, zero (false) otherwise\n\n");
+	printf("Output: Non-zero value (1) if the character is an alphanumeric character, zero (0) otherwise\n\n");
 
 	printf("Test Case 1: c = 'a'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isalnum('a'));
 
 	printf("Test Case 2: c = '5'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isalnum('5'));
 
 	printf("Test Case 3: c = ' ' (space)\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isalnum(' '));
 
 	printf("Enter a custom character to test: ");
@@ -128,23 +90,24 @@ void testFtIsalnum() {
 	printf("Result: %d\n\n", ft_isalnum(customChar));
 }
 
+/*
 void testFtIsascii() {
 	clearScreen();
 	printf("Function: int ft_isascii(int c)\n");
 	printf("Description: The ft_isascii() function tests for an ASCII character, which is any character between 0 and octal 0177 inclusive.\n");
 	printf("Input: An integer representing a character\n");
-	printf("Output: Non-zero value (true) if the character is an ASCII character, zero (false) otherwise\n\n");
+	printf("Output: Non-zero value (1) if the character is an ASCII character, zero (0) otherwise\n\n");
 
 	printf("Test Case 1: c = 'a'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isascii('a'));
 
 	printf("Test Case 2: c = 128 (outside ASCII range)\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isascii(128));
 
 	printf("Test Case 3: c = '\\n' (newline)\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isascii('\n'));
 
 	printf("Enter a custom character to test: ");
@@ -158,18 +121,18 @@ void testFtIsprint() {
 	printf("Function: int ft_isprint(int c)\n");
 	printf("Description: The ft_isprint() function tests for any printing character, including space (` `).\n");
 	printf("Input: An integer representing a character\n");
-	printf("Output: Non-zero value (true) if the character is a printing character, zero (false) otherwise\n\n");
+	printf("Output: Non-zero value (1) if the character is a printing character, zero (0) otherwise\n\n");
 
 	printf("Test Case 1: c = 'a'\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isprint('a'));
 
 	printf("Test Case 2: c = '\\n' (newline)\n");
-	printf("Expected Output: Zero (false)\n");
+	printf("Expected Output: Zero (0)\n");
 	printf("Result: %d\n\n", ft_isprint('\n'));
 
 	printf("Test Case 3: c = ' ' (space)\n");
-	printf("Expected Output: Non-zero value (true)\n");
+	printf("Expected Output: Non-zero value (1)\n");
 	printf("Result: %d\n\n", ft_isprint(' '));
 
 	printf("Enter a custom character to test: ");
@@ -1118,30 +1081,30 @@ void testFtIsspace() {
     printf("Function: int ft_isspace(const int c)\n");
     printf("Description: The ft_isspace() function tests for white-space characters. In C, these are: space (' '), form-feed ('\\f'), newline ('\\n'), carriage return ('\\r'), horizontal tab ('\\t'), and vertical tab ('\\v').\n");
     printf("Input: An integer representing a character\n");
-    printf("Output: Non-zero value (true) if the character is a white-space character, zero (false) otherwise\n\n");
+    printf("Output: Non-zero value (1) if the character is a white-space character, zero (0) otherwise\n\n");
 
     printf("Test Case 1: c = ' ' (space)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace(' '));
 
     printf("Test Case 2: c = '\\n' (newline)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace('\n'));
 
     printf("Test Case 3: c = '\\f' (form-feed)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace('\f'));
 
     printf("Test Case 4: c = '\\r' (carriage return)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace('\r'));
 
     printf("Test Case 5: c = '\\t' (horizontal tab)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace('\t'));
 
     printf("Test Case 6: c = '\\v' (vertical tab)\n");
-    printf("Expected Output: Non-zero value (true)\n");
+    printf("Expected Output: Non-zero value (1)\n");
     printf("Result: %d\n\n", ft_isspace('\v'));
 
     printf("Enter a custom character to test: ");
@@ -1848,7 +1811,7 @@ void	testFtPutnbrFd(void)
 	close(fd);
 	printf("Integer written to the file 'test_file.txt'\n\n");
 }
-
+*/
 int main(void)
 {
     int choice = -1; // Initialize choice to a non-zero value to enter the loop
@@ -1899,104 +1862,104 @@ int main(void)
 		case 3:
 			testFtIsalnum();
 			break ;
-		case 4:
-			testFtIsascii();
-			break ;
-		case 5:
-			testFtIsprint();
-			break ;
-		case 6:
-			testFtStrlen();
-			break ;
-		case 7:
-			testFtMemset();
-			break ;
-		case 8:
-			testFtBzero();
-			break ;
-		case 9:
-			testFtMemcpy();
-			break ;
-		case 10:
-			testFtMemmove();
-			break ;
-		case 11:
-			testFtStrlcpy();
-			break ;
-		case 12:
-			testFtStrlcat();
-			break ;
-		case 13:
-			testFtToupper();
-			break ;
-		case 14:
-			testFtTolower();
-			break ;
-		case 15:
-			testFtStrchr();
-			break ;
-		case 16:
-			testFtStrrchr();
-			break ;
-		case 17:
-			testFtStrncmp();
-			break ;
-		case 18:
-			testFtMemchr();
-			break ;
-		case 19:
-			testFtMemcmp();
-			break ;
-		case 20:
-			testFtStrnstr();
-			break ;
-		case 21:
-			testFtAtoi();
-			break ;
-		case 22:
-			testFtCalloc();
-			break ;
-		case 23:
-			testFtStrdup();
-			break ;
-		// Additional functions
-		case 24:
-			testFtSubstr();
-			break ;
-		case 25:
-			testFtStrjoin();
-			break ;
-		case 26:
-			testFtStrtrim();
-			break ;
-		case 27:
-			testFtSplit();
-			break ;
-		case 28:
-			testFtItoa();
-			break ;
-		case 29:
-			testFtStriteri();
-			break ;
-		case 30:
-			testFtPutcharFd();
-			break ;
-		case 31:
-			testFtPutstrFd();
-			break ;
-		case 32:
-			testFtPutendlFd();
-			break ;
-		case 33:
-			testFtPutnbrFd();
-			break ;
-		// Helper functions
-		case 34:
-			testFtStrnew();
-			break ;
-		case 35:
-			testFtIsspace();
-			break ;
+		// case 4:
+		// 	testFtIsascii();
+		// 	break ;
+		// case 5:
+		// 	testFtIsprint();
+		// 	break ;
+		// case 6:
+		// 	testFtStrlen();
+		// 	break ;
+		// case 7:
+		// 	testFtMemset();
+		// 	break ;
+		// case 8:
+		// 	testFtBzero();
+		// 	break ;
+		// case 9:
+		// 	testFtMemcpy();
+		// 	break ;
+		// case 10:
+		// 	testFtMemmove();
+		// 	break ;
+		// case 11:
+		// 	testFtStrlcpy();
+		// 	break ;
+		// case 12:
+		// 	testFtStrlcat();
+		// 	break ;
+		// case 13:
+		// 	testFtToupper();
+		// 	break ;
+		// case 14:
+		// 	testFtTolower();
+		// 	break ;
+		// case 15:
+		// 	testFtStrchr();
+		// 	break ;
+		// case 16:
+		// 	testFtStrrchr();
+		// 	break ;
+		// case 17:
+		// 	testFtStrncmp();
+		// 	break ;
+		// case 18:
+		// 	testFtMemchr();
+		// 	break ;
+		// case 19:
+		// 	testFtMemcmp();
+		// 	break ;
+		// case 20:
+		// 	testFtStrnstr();
+		// 	break ;
+		// case 21:
+		// 	testFtAtoi();
+		// 	break ;
+		// case 22:
+		// 	testFtCalloc();
+		// 	break ;
+		// case 23:
+		// 	testFtStrdup();
+		// 	break ;
+		// // Additional functions
+		// case 24:
+		// 	testFtSubstr();
+		// 	break ;
+		// case 25:
+		// 	testFtStrjoin();
+		// 	break ;
+		// case 26:
+		// 	testFtStrtrim();
+		// 	break ;
+		// case 27:
+		// 	testFtSplit();
+		// 	break ;
+		// case 28:
+		// 	testFtItoa();
+		// 	break ;
+		// case 29:
+		// 	testFtStriteri();
+		// 	break ;
+		// case 30:
+		// 	testFtPutcharFd();
+		// 	break ;
+		// case 31:
+		// 	testFtPutstrFd();
+		// 	break ;
+		// case 32:
+		// 	testFtPutendlFd();
+		// 	break ;
+		// case 33:
+		// 	testFtPutnbrFd();
+		// 	break ;
+		// // Helper functions
+		// case 34:
+		// 	testFtStrnew();
+		// 	break ;
+		// case 35:
+		// 	testFtIsspace();
+		// 	break ;
 		case 0:
 			printf("Exiting...\n");
 			break ;

@@ -9,7 +9,7 @@ ROOT_DIR = $(shell pwd)
 # Compiler settings
 
 CC = cc
-CFLAGS += -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS += -Wall -Wextra -Werror -std=c99 -I $(INC_DIR)
 AR = ar
 ARFLAGS = cr
 
