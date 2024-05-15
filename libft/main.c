@@ -457,7 +457,6 @@ void testFtMemmove() {
     ft_memmove(customDst, customSrc, n);
     printf("After: dest = \"%s\"\n\n", customDst);
 }
-/*
 
 void testFtStrlcpy() {
 	clearScreen();
@@ -523,6 +522,7 @@ void testFtStrlcpy() {
 	size_t len6 = ft_strlcpy(customDst, customSrc, customDstSize);
 	printf("After: dst = \"%s\", len = %zu\n\n", customDst, len6);
 }
+/*
 
 void testFtStrlcat() {
 	clearScreen();
@@ -1897,9 +1897,9 @@ int main(void)
 		case 10:
 			testFtMemmove();
 			break ;
-		// case 11:
-		// 	testFtStrlcpy();
-		// 	break ;
+		case 11:
+			testFtStrlcpy();
+			break ;
 		// case 12:
 		// 	testFtStrlcat();
 		// 	break ;
