@@ -1,6 +1,8 @@
 # Project settings
 
 LIB = libft.a
+MAIN = main.c
+TEST = test
 INC_FILE = ftlib.h
 SRC_DIR = .
 INC_DIR = .
@@ -17,7 +19,7 @@ ARFLAGS = cr
 
 FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 	ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove \
-	ft_strlcpy ft_strlcat
+	ft_strlcpy ft_strlcat ft_toupper ft_tolower
 
 # Expand each file with directory and extension, e.g. src/*.c
 
@@ -60,3 +62,8 @@ fclean: clean
 # Remove all *.o files and libft.a, then generate a new libft.a
 
 re: fclean all
+
+# Additional recipes
+
+test: all
+	$(CC) $(MAIN) -o $(TEST) $(LIB) && ./test

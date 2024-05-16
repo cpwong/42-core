@@ -588,7 +588,6 @@ void testFtStrlcat() {
 	printf("After: dst = \"%s\", len = %zu\n\n", customDst, len6);
 }
 
-/*
 void testFtToupper() {
 	clearScreen();
 	printf("Function: int ft_toupper(int c)\n");
@@ -639,6 +638,7 @@ void testFtTolower() {
 	printf("Result: '%c'\n\n", ft_tolower(customChar));
 }
 
+/*
 void testFtStrchr() {
 	clearScreen();
 	printf("Function: char *ft_strchr(const char *s, int c)\n");
@@ -1904,12 +1904,12 @@ int main(void)
 		case 12:
 			testFtStrlcat();
 			break ;
-		// case 13:
-		// 	testFtToupper();
-		// 	break ;
-		// case 14:
-		// 	testFtTolower();
-		// 	break ;
+		case 13:
+			testFtToupper();
+			break ;
+		case 14:
+			testFtTolower();
+			break ;
 		// case 15:
 		// 	testFtStrchr();
 		// 	break ;
