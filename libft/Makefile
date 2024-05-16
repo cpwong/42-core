@@ -15,7 +15,9 @@ ARFLAGS = cr
 
 # Source and object files
 
-FILES = ft_putchar ft_swap ft_putstr ft_strlen ft_strcmp
+FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
+	ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove \
+	ft_strlcpy ft_strlcat
 
 # Expand each file with directory and extension, e.g. src/*.c
 
