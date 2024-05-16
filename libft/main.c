@@ -522,7 +522,6 @@ void testFtStrlcpy() {
 	size_t len6 = ft_strlcpy(customDst, customSrc, customDstSize);
 	printf("After: dst = \"%s\", len = %zu\n\n", customDst, len6);
 }
-/*
 
 void testFtStrlcat() {
 	clearScreen();
@@ -532,7 +531,7 @@ void testFtStrlcat() {
 	printf("Output: The total length of the string that would have been created (not including the NUL character)\n\n");
 
 	// Test case 1: destination buffer size exactly fits the concatenated string
-	char dst1[10] = "hello";
+	char dst1[12] = "hello";
 	char src1[] = " world";
 	printf("Test Case 1: dst = \"hello\", src = \" world\", dstsize = sizeof(dst1)\n");
 	printf("Expected Output: dst = \"hello world\", len = 11\n");
@@ -544,7 +543,7 @@ void testFtStrlcat() {
 	char dst2[10] = "abc";
 	char src2[] = "defghijkl";
 	printf("Test Case 2: dst = \"abc\", src = \"defghijkl\", dstsize = sizeof(dst2)\n");
-	printf("Expected Output: dst = \"abcdefg\", len = 10\n");
+	printf("Expected Output: dst = \"abcdefghi\", len = 10\n");
 	printf("Before: dst = \"%s\"\n", dst2);
 	size_t len2 = ft_strlcat(dst2, src2, sizeof(dst2));
 	printf("After: dst = \"%s\", len = %zu\n\n", dst2, len2);
@@ -588,6 +587,8 @@ void testFtStrlcat() {
 	size_t len6 = ft_strlcat(customDst, customSrc, customDstSize);
 	printf("After: dst = \"%s\", len = %zu\n\n", customDst, len6);
 }
+
+/*
 void testFtToupper() {
 	clearScreen();
 	printf("Function: int ft_toupper(int c)\n");
@@ -1900,9 +1901,9 @@ int main(void)
 		case 11:
 			testFtStrlcpy();
 			break ;
-		// case 12:
-		// 	testFtStrlcat();
-		// 	break ;
+		case 12:
+			testFtStrlcat();
+			break ;
 		// case 13:
 		// 	testFtToupper();
 		// 	break ;
