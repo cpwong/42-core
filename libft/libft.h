@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/18 15:14:10 by chenwong          #+#    #+#             */
+/*   Updated: 2024/05/18 15:23:21 by chenwong         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <sys/types.h>
+# include <stdlib.h>
+# include <sys/types.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
