@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:33:38 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:33:40 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/18 16:17:47 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *src, int c, size_t len)
 {
 	unsigned char	*ptr;
 
-	if (!src)
-		return (NULL);
 	ptr = (unsigned char *)src;
 	while (len-- > 0)
 		*ptr++ = (unsigned char)c;

@@ -3,7 +3,9 @@
 LIB = libft.a
 MAIN = main.c
 TEST = test
+TEST_DIR = ./tests
 INC_FILE = ftlib.h
+INC_DIR = ./include
 SRC_DIR = .
 INC_DIR = .
 ROOT_DIR = $(shell pwd)
@@ -11,7 +13,7 @@ ROOT_DIR = $(shell pwd)
 # Compiler settings
 
 CC = cc
-CFLAGS += -Wall -Wextra -Werror -std=c99 -I $(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -std=c99
 AR = ar
 ARFLAGS = cr
 
@@ -66,4 +68,10 @@ re: fclean all
 # Additional recipes
 
 test: all
-	$(CC) $(MAIN) -o $(TEST) $(LIB) && ./test
+	$(CC) $(MAIN) -o $(TEST) $(LIB)
+
+test_%: $(SRC_DIR)/%.c $(LIB)
+	mkdir -p $(TEST_DIR)
+	$(CC) $(TEST_DIR)/test_$< -o $@ $(LIB)
+	./$@
+
