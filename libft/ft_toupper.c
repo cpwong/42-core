@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:35:17 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:35:17 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/18 19:24:40 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
+	if ((U8)c >= 'a' && (U8)c <= 'z')
 		return (c - 32);
 	else
 		return (c);

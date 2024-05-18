@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:14:10 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:23:21 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/18 19:25:22 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <sys/types.h>
+
+# define U8	unsigned char
+# define U16 	unsigned int
+# define U32	unsigned long
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

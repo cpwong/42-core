@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:34:18 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:34:19 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/18 19:21:33 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 
 	src_len = ft_strlen(src);
-
 	if (!dst || !src || !dstsize)
 		return (src_len);
-
 	i = 0;
 	while (src[i] != '\0' && i < dstsize - 1)
 	{
