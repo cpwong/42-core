@@ -21,7 +21,8 @@ ARFLAGS = cr
 
 FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 	ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove \
-	ft_strlcpy ft_strlcat ft_toupper ft_tolower
+	ft_strlcpy ft_strlcat ft_toupper ft_tolower \
+	ft_strncmp
 
 # Expand each file with directory and extension, e.g. src/*.c
 
@@ -73,5 +74,3 @@ test: all
 test_%: $(SRC_DIR)/%.c $(LIB)
 	mkdir -p $(TEST_DIR)
 	$(CC) $(TEST_DIR)/test_$< -o $@ $(LIB)
-	./$@
-
