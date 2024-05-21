@@ -181,7 +181,7 @@ void printMemory(const void *ptr, size_t size) {
 		printf("NULL");
 		return;
 	}
-	
+
 	const unsigned char *bytes = (const unsigned char *)ptr;
 	for (size_t i = 0; i < size; i++) {
 		printf("%c", (bytes[i] != '\0') ? (char)bytes[i] : '.'); // Print non-empty bytes as characters, empty bytes as dots
@@ -638,7 +638,6 @@ void testFtTolower() {
 	printf("Result: '%c'\n\n", ft_tolower(customChar));
 }
 
-/*
 void testFtStrchr() {
 	clearScreen();
 	printf("Function: char *ft_strchr(const char *s, int c)\n");
@@ -667,19 +666,20 @@ void testFtStrchr() {
 	char *result3 = ft_strchr(emptyStr, 'a');
 	printf("Result: %s\n\n", result3 != NULL ? result3 : "NULL");
 
-	// Test case with NULL pointer
-	printf("Test Case 4: NULL pointer\n");
-	printf("Expected Output: NULL\n");
-	char *result4 = ft_strchr(NULL, 'a');
-	printf("Result: %s\n\n", result4 != NULL ? result4 : "NULL");
-
 	// Test case with special characters
 	char str3[] = "hello, world!";
 	printf("Test Case 5: s = \"hello, world!\", c = '!'\n");
 	printf("Expected Output: A pointer to the first '!' in the string\n");
 	char *result5 = ft_strchr(str3, '!');
 	printf("Result: %s\n\n", result5 != NULL ? result5 : "NULL");
+
+	// Test case with NULL pointer
+	printf("Test Case 4: NULL pointer\n");
+	printf("Expected Output: NULL\n");
+	char *result4 = ft_strchr(NULL, 'a');
+	printf("Result: %s\n\n", result4 != NULL ? result4 : "NULL");
 }
+/*
 void testFtStrrchr() {
 	clearScreen();
 	printf("Function: char *ft_strrchr(const char *s, int c)\n");
@@ -1314,7 +1314,7 @@ void testFtStrjoin() {
 	}
 }
 
-void testFtStrtrim() 
+void testFtStrtrim()
 {
 	clearScreen();
 	printf("Function: char *ft_strtrim(char const *s1, char const *set)\n");
@@ -1398,7 +1398,7 @@ void testFtStrtrim()
 	}
 }
 
-void testFtSplit() 
+void testFtSplit()
 {
 	clearScreen();
 	printf("Function: char **ft_split(char *str, char *charset)\n");
@@ -1531,7 +1531,7 @@ void testFtSplit()
 	}
 }
 
-void testFtItoa() 
+void testFtItoa()
 {
 	clearScreen();
 	printf("Function: char *ft_itoa(int n)\n");
@@ -1686,7 +1686,7 @@ void testFtStriteri() {
 	printf("After: %s\n\n", customStr);
 }
 
-void testFtPutcharFd() 
+void testFtPutcharFd()
 {
 	clearScreen();
 	printf("Function: void ft_putchar_fd(char c, int fd)\n");
@@ -1721,7 +1721,7 @@ void testFtPutcharFd()
 	printf("Character written to the file 'test_file.txt'\n\n");
 }
 
-void testFtPutstrFd() 
+void testFtPutstrFd()
 {
 	clearScreen();
 	printf("Function: void ft_putstr_fd(char const *s, int fd)\n");
@@ -1756,7 +1756,7 @@ void testFtPutstrFd()
 	printf("String written to the file 'test_file.txt'\n\n");
 }
 
-void testFtPutendlFd() 
+void testFtPutendlFd()
 {
 	clearScreen();
 	printf("Function: void ft_putendl_fd(char const *s, int fd)\n");
