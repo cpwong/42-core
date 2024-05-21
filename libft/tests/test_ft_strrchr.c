@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// #define ft_strchr strchr
+#define ft_strrchr strrchr
 
 int	main(void)
 {
