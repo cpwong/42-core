@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 19:36:38 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 20:21:30 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:44:06 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0)
+	while (n-- > 0)
 	{
-		if (*s1++ == *s2++)
-			n--;
-		else
-			return (*s2 - *s1);
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
