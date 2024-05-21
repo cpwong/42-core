@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:44:30 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/21 14:31:56 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:35:30 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0' && *s != c)
 		s++;
-	return ((char *)c);
+	return ((char *)s);
 }
