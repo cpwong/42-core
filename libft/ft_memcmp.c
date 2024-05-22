@@ -14,11 +14,11 @@
 
 int	ft_memcmp(void *dest, const void *src, size_t n)
 {
-	U8	*src_ptr;
-	U8	*dest_ptr;
+	unsigned char	*src_ptr;
+	unsigned char	*dest_ptr;
 
-	dest_ptr = (U8 *)dest;
-	src_ptr = (U8 *)src;
+	dest_ptr = (unsigned char *)dest;
+	src_ptr = (unsigned char *)src;
 	while (n-- > 0)
 	{
 		if (*dest_ptr != *src_ptr)
