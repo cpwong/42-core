@@ -9,6 +9,7 @@ INC_DIR = ./include
 SRC_DIR = .
 INC_DIR = .
 ROOT_DIR = $(shell pwd)
+OBJ_DIR = ./obj
 
 # Compiler settings
 
@@ -27,7 +28,7 @@ FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 # Expand each file with directory and extension, e.g. src/*.c
 
 SOURCES = $(foreach file, $(FILES), $(SRC_DIR)/$(file).c)
-OBJECTS = $(foreach file, $(FILES), $(SRC_DIR)/$(file).o)
+OBJECTS = $(foreach file, $(FILES), $(OBJ_DIR)/$(file).o)
 
 # Default target
 
@@ -49,13 +50,14 @@ $(LIB): $(OBJECTS)
 #	$@ - Target $(OBJECTS)
 #	$< - First prerequisite
 
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/$(INC_FILE)
-	$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Remove all *.o files with -force
 
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(OBJ_DIR)
 
 # Remove all *.o and libft.a files
 
@@ -74,3 +76,7 @@ test: all
 test_%: $(SRC_DIR)/%.c $(LIB)
 	mkdir -p $(TEST_DIR)
 	$(CC) $(TEST_DIR)/test_$< -o $@ $(LIB)
+
+print_obj:
+	@echo $(OBJ_DIR)
+	@echo $(OBJECTS)
