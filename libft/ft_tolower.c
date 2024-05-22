@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if ((U8)c >= 'A' && (U8)c <= 'Z')
+	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
 		return (c + 32);
 	else
 		return (c);

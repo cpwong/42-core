@@ -16,10 +16,6 @@
 # include <stdlib.h>
 # include <sys/types.h>
 
-# define U8	unsigned char
-# define U16 	unsigned int
-# define U32	unsigned long
-
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
