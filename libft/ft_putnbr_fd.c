@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:06:26 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 17:06:27 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/26 22:17:43 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;
-	
+
 	if (n != -2147483648)
 	{
-		if (n < 0) 
+		if (n < 0)
 		{
 			write(fd, "-", 1);
 			n = -n;
@@ -31,8 +31,5 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &digit, 1);
 	}
 	else
-	{
 		write(fd, "-2147483648", 11);
-	}
-
 }

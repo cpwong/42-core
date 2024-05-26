@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:30:33 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 21:15:56 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/26 22:16:14 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*ptr_dst;
+	unsigned char		*ptr_dst;
 	const unsigned char	*ptr_src;
 
 	if (!dst && !src)

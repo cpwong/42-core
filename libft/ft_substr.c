@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 21:16:40 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 21:16:40 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/26 22:19:09 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	substr[i] = '\0';
-	return (substr);	
+	return (substr);
 }
