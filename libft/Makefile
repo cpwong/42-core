@@ -25,7 +25,7 @@ FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 	ft_strlcpy ft_strlcat ft_toupper ft_tolower ft_strncmp \
 	ft_strchr ft_strrchr ft_memchr ft_memcmp ft_strnstr \
 	ft_atoi ft_calloc ft_strdup ft_substr ft_strjoin \
-	ft_strtrim ft_split 
+	ft_strtrim ft_split ft_itoa
 	
 # Expand each file with directory and extension, e.g. src/*.c
 
