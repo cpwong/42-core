@@ -6,13 +6,13 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:24:08 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:24:09 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/26 23:57:07 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (c < 'A' || c > 'z')
-		return (0);
-	return (1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }

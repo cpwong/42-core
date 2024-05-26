@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 21:53:51 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/26 23:27:14 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,16 @@ char	**ft_process_words(char **array, char const *str, char *charset)
 	return (array);
 }
 
-char	**ft_split(const char *str, char *charset)
+char	**ft_split(const char *s, char *c)
 {
 	int		num_words;
 	char	**result;
 
-	num_words = ft_count_words(str, charset);
+	num_words = ft_count_words(s, c);
 	result = malloc(sizeof(char *) * num_words + 1);
 	if (!result)
 		return (NULL);
 	result[0] = 0;
-	result = ft_process_words(result, str, charset);
+	result = ft_process_words(result, s, c);
 	return (result);
 }

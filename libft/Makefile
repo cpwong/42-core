@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = clang
 FLAGS = -Wall -Wextra -Werror
 LIB = ar rcs
 FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
