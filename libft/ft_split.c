@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_count_words(char *str, char *charset)
+int	ft_count_words(char const *str, char *charset)
 {
 	int	count;
 	int	i;
@@ -20,7 +20,7 @@ int	ft_count_words(char *str, char *charset)
 	return (count);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *str, char *charset)
 {
 	int		i;
 	int		j;
