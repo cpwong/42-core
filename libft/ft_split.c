@@ -6,11 +6,12 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/27 17:27:11 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/28 01:06:00 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_count_words(char const *str, char c)
 {
@@ -32,6 +33,7 @@ int	ft_count_words(char const *str, char c)
 		}
 		str++;
 	}
+	printf("count: %d\n", count);
 	return (count);
 }
 
@@ -49,7 +51,7 @@ char	**ft_create_word(char **array, char const *str, int word_start, int word_le
 		return (NULL);
 	while (j < word_len)
 	{
-		array[i][j] = str[word_start + 1];
+		array[i][j] = str[word_start + j];
 		j++;
 	}
 	array[i][j] = '\0';
@@ -63,6 +65,7 @@ char	**ft_process_words(char **array, char const *str, char c)
 	int	word_len;
 
 	i = 0;
+	word_len = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == c)
