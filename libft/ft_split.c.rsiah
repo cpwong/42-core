@@ -1,0 +1,73 @@
+#include "libft.h"
+#include <stdlib.h>
+
+static	size_t	count_words(char const *s, char c)
+{
+	size_t	count;
+	size_t	i;
+
+	count = 0;
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			if (s[i] != c && (s[i + 1] == c || !(s[i + 1])))
+				count++;
+			i++;
+		}
+	}
+	return (count);
+}
+
+/**
+ * Returns the length of the string delimited by C or NULL
+ */
+static	size_t	ft_ultimate_strlen(const char *str, char c)
+{
+	size_t	output;
+
+	output = 0;
+	while (str[output] && str[output] != c)
+		output++;
+	return (output);
+}
+
+static	void	free_strings_in_array(char **str_arr)
+{
+	while (*str_arr)
+	{
+		free(*str_arr);
+		*str_arr = NULL;
+		str_arr++;
+	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**output;
+	size_t	i;
+	size_t	words;
+
+	words = count_words(s, c);
+	i = 0;
+	output = malloc((words + 1) * sizeof(char *));
+	if (!output)
+		return (NULL);
+	while (i < words)
+	{
+		while (*s == c)
+			s++;
+		output[i] = ft_calloc(ft_ultimate_strlen(s, c) + 1, sizeof(char));
+		if (!output[i])
+		{
+			free_strings_in_array(output);
+			return (free(output), NULL);
+		}
+		ft_strlcpy(output[i], s, ft_ultimate_strlen(s, c) + 1);
+		s += ft_ultimate_strlen(s, c);
+		i++;
+	}
+	output[words] = NULL;
+	return (output);
+}

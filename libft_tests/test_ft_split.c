@@ -1,6 +1,7 @@
 #include "../libft/libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void	print_array(char **array)
 {
@@ -11,34 +12,74 @@ void	print_array(char **array)
 		printf("\t...i = %d, array[i] = %s\n", i, array[i]);
 		i++;
 	}
-	printf("\t...i = %d, array[i] = %p\n\n", i, array[i]);
+	printf("\t...i = %d, addr[i] = %p\n\n", i, array[i]);
 }
 
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 3)
+// 	{
+// 		char	**string_array;
+// 		size_t	i;
+
+// 		if (strcmp(argv[1], "NULL") == 0)
+// 			argv[1] = NULL;
+// 		if (strcmp(argv[2], "NULL") == 0)
+// 			*argv[2] = '\0';
+// 		i = 0;
+// 		string_array = ft_split(argv[1], *argv[2]);
+// 		if (!string_array)
+// 		{
+// 			printf("Failed to create string array!\n");
+// 			free(string_array);
+// 		}
+// 		else
+// 		{
+// 			while (string_array[i])
+// 			{
+// 				printf("String: %s\n", string_array[i]);
+// 				i++;
+// 			}
+// 			free(string_array);
+// 		}
+// 	}
+// 	return (EXIT_SUCCESS);
+// }
 
 int	main(void)
 {
-	char **result_0 = ft_split("", '\0');
-	printf("#0 Array = %p, Expected: {(null)}\n", result_0);
+	char source_0[] = "hello!";
+	char **result_0 = ft_split(source_0, ' ');
+	printf("#0 str = %s\n", source_0);
 	print_array(result_0);
 
-	char **result_1 = ft_split("Andy", ' ');
+	char source_1[] = "Andy             ";
+	char **result_1 = ft_split(source_1, ' ');
+	printf("#1 str = %s\n", source_1);
 	printf("#1 Array = %p, Expected: {'Andy', (null)}\n", result_1);
 	print_array(result_1);
 
-	char **result_2 = ft_split("Andy,Bobby,Charlie", ',');
+	char source_2[] = ("Andy,Bobby,Charlie");
+	char **result_2 = ft_split(source_2, ',');
+	printf("#2 str = %s\n", source_2);
 	printf("#2 Array = %p, Expected {'Andy', 'Bobby', 'Charlie', (null)}\n", result_2);
 	print_array(result_2);
 
-	char **result_3 = ft_split(",,,Andy|Bobby|Charlie,,,", '|');
+	char source_3[] = (",,,Andy|Bobby|Charlie,,,");
+	char **result_3 = ft_split(source_3, '|');
+	printf("#3 str = %s\n", source_3);
 	printf("#3 Array = %p, Expected {',,,Andy', 'Bobby', 'Charlie,,,', (null)}\n", result_3);
 	print_array(result_3);
 
-	char **result_4 = ft_split("aaaaabbbbbccccc", 'a');
+	char source_4[] = "                  olol";
+	char **result_4 = ft_split(source_4, ' ');
+	printf("#4 str = %s\n", source_4);
 	printf("#4 Array = %p, Expected {'bbbbbccccc', (null)}\n", result_4);
 	print_array(result_4);
 
-	char **result_5 = ft_split("Andy Bobby Charlie", ' ');
-	printf("#3 Array = %p, Expected {'Andy', 'Bobby', 'Charlie', (null)}\n", result_3);
+	char source_5[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+	char **result_5 = ft_split(source_5, ' ');
+	printf("#5 str = %s\n", source_5);
 	print_array(result_5);
 
 

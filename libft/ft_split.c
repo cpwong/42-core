@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/28 01:06:00 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:18:16 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_count_words(char const *str, char c)
 {
 	int		count;
-	int 	in_word;
+	int		in_word;
 
 	count = 0;
 	in_word = 0;
@@ -33,11 +33,21 @@ int	ft_count_words(char const *str, char c)
 		}
 		str++;
 	}
-	printf("count: %d\n", count);
 	return (count);
 }
 
-char	**ft_create_word(char **array, char const *str, int word_start, int word_len)
+void	ft_free_array(char **array)
+{
+	while (*array)
+	{
+		free(*array);
+		*array = NULL;
+		array++;
+	}
+	free(array);
+}
+
+char	**ft_create_word(char **array, char const *str, int w_start, int w_len)
 {
 	int	j;
 	int	i;
@@ -46,16 +56,20 @@ char	**ft_create_word(char **array, char const *str, int word_start, int word_le
 	j = 0;
 	while (array[i] != 0)
 		i++;
-	array[i] = (char *)malloc((word_len + 1) * sizeof(char *));
+	// array[i] = (char *)malloc((w_len + 1) * sizeof(char));
+	array[i] = ft_calloc(w_len + 1, sizeof(char));
 	if (array[i] == NULL)
-		return (NULL);
-	while (j < word_len)
 	{
-		array[i][j] = str[word_start + j];
+		ft_free_array(array);
+		return (NULL);
+	}
+	while (j < w_len)
+	{
+		array[i][j] = str[w_start + j];
 		j++;
 	}
 	array[i][j] = '\0';
-	array[i + 1] = 0;
+	array[i + 1] = NULL;
 	return (array);
 }
 
@@ -90,10 +104,15 @@ char	**ft_split(char const *s, char c)
 	int		num_words;
 	char	**result;
 
+	if (s == NULL)
+		return (NULL);
 	num_words = ft_count_words(s, c);
 	result = malloc(sizeof(char *) * (num_words + 1));
 	if (!result)
+	{
+		ft_free_array(result);
 		return (NULL);
+	}
 	result[num_words] = NULL;
 	if (num_words == 0)
 		return (result);
