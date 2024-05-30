@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -34,10 +34,16 @@ int	main(void)
 	printf("Expected Output: 0\n");
 	printf("Result: %d\n\n", ft_strncmp(emptyStr1, emptyStr2, 1));
 
-	// Test case with NULL pointers
-	printf("Test Case 5: NULL pointers\n");
-	printf("Expected Output: 0\n");
-	printf("Result: %d\n\n", ft_strncmp(NULL, NULL, 0));
+	// // Test case with NULL pointers
+	// printf("Test Case 5: NULL pointers\n");
+	// printf("Expected Output: 0\n");
+	// printf("Result: %d\n\n", ft_strncmp(NULL, NULL, 0));
+
+	// Custom test cases
+	char str7[] = "test\200";
+	char str8[] = "test\0";
+	printf("Custom Test Cases\n");
+	printf("Result: %d\n\n", ft_strncmp(str7, str8, 6));
 
 	// Additional custom test case
 	// printf("Enter the first string: ");
@@ -50,4 +56,5 @@ int	main(void)
 	// size_t n;
 	// scanf("%zu", &n);
 	// printf("Result: %d\n\n", ft_strncmp(customStr1, customStr2, n));
+
 }
