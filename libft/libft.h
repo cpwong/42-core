@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:14:10 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/27 09:15:38 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/31 02:02:43 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <fcntl.h>
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <sys/types.h>
