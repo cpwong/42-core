@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -30,15 +30,15 @@ int	main(void)
 
 	// Test case with special characters
 	char str3[] = "hello, world!";
-	printf("Test Case 5: s = \"hello, world!\", c = '!'\n");
+	printf("Test Case 4: s = \"hello, world!\", c = '!'\n");
 	printf("Expected Output: A pointer to the first '!' in the string\n");
 	char *result5 = ft_strchr(str3, '!');
 	printf("Result: %s\n\n", result5 != NULL ? result5 : "NULL");
 
-	// Test case with NULL pointer
-	printf("Test Case 4: NULL pointer\n");
-	printf("Expected Output: NULL (seg. fault)\n");
-	char *result4 = ft_strchr(NULL, 'a');
+	// Test case to search for '\0
+	printf("Test Case 5: Search for terminating null\n");
+	printf("Expected Output: A pointer to the terminating null\n");
+	char *result4 = ft_strchr(str3, '\0');
 	printf("Result: %s\n\n", result4 != NULL ? result4 : "NULL");
 }
 
