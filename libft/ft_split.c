@@ -6,12 +6,11 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/28 19:18:16 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:22:48 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_count_words(char const *str, char c)
 {
@@ -38,10 +37,11 @@ int	ft_count_words(char const *str, char c)
 
 void	ft_free_array(char **array)
 {
-	while (*array)
+	if (array == NULL)
+		return ;
+	while (*array != NULL)
 	{
 		free(*array);
-		*array = NULL;
 		array++;
 	}
 	free(array);
@@ -56,7 +56,6 @@ char	**ft_create_word(char **array, char const *str, int w_start, int w_len)
 	j = 0;
 	while (array[i] != 0)
 		i++;
-	// array[i] = (char *)malloc((w_len + 1) * sizeof(char));
 	array[i] = ft_calloc(w_len + 1, sizeof(char));
 	if (array[i] == NULL)
 	{
@@ -87,6 +86,8 @@ char	**ft_process_words(char **array, char const *str, char c)
 			if (word_len > 0)
 			{
 				array = ft_create_word(array, str, i - word_len, word_len);
+				if (array == NULL)
+					return (NULL);
 				word_len = 0;
 			}
 		}
@@ -107,15 +108,13 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	num_words = ft_count_words(s, c);
-	result = malloc(sizeof(char *) * (num_words + 1));
+	result = ft_calloc(num_words + 1, sizeof(char *));
 	if (!result)
+		return (NULL);
+	if (!ft_process_words(result, s, c))
 	{
 		ft_free_array(result);
 		return (NULL);
 	}
-	result[num_words] = NULL;
-	if (num_words == 0)
-		return (result);
-	result = ft_process_words(result, s, c);
 	return (result);
 }
