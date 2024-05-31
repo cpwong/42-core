@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:34:44 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/18 15:34:46 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:29:35 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
-	if (!s)
-		return (0);
 	len = 0;
 	while (s[len] != '\0')
 	{
