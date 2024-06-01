@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:05:55 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 22:15:13 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:46:36 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
+	if (count && size && count > (INT_MAX / size))
+		return (NULL);
 	ptr = malloc(count * size);
 	if (ptr != NULL)
 		ft_memset(ptr, 0, count * size);

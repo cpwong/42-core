@@ -34,25 +34,34 @@ int main(void) {
 	char str4[] = "aaxx";
 	char tofind4[] = "xx";
 	size_t len4 = 2;
-	printf("Test Case 4: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len4);
+	printf("Test Case 4a: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len4);
 	printf("str = %p\n", str4);
 	char *result4 = ft_strnstr(str4, tofind4, len4);
 	printf("Result: %p\n", result4 != NULL ? result4 : "NULL");
 	printf("Result: %s\n\n", result4 != NULL ? result4 : "NULL");
 
 	size_t len5 = 3;
-	printf("Test Case 4: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len5);
+	printf("Test Case 4b: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len5);
 	printf("str = %p, find = %p\n", str4, tofind4);
 	char *result5 = ft_strnstr(str4, tofind4, len5);
 	printf("Result: %p\n", result5 != NULL ? result5 : "NULL");
 	printf("Result: %s\n\n", result5 != NULL ? result5 : "NULL");
 
 	size_t len6 = 4;
-	printf("Test Case 4: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len6);
+	printf("Test Case 4c: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len6);
 	printf("str = %p, find = %p\n", str4, tofind4);
 	char *result6 = ft_strnstr(str4, tofind4, len6);
 	printf("Result: %p\n", result6 != NULL ? result6 : "NULL");
 	printf("Result: %s\n\n", result6 != NULL ? result6 : "NULL");
+
+	size_t len7 = 1;
+	char haystack[] = "abc";
+	char needle[] = "xyz";
+	printf("Test Case 5: str = %s, tofind = %s, len = %zu\n", haystack, needle, len7);
+	printf("str = %p, find = %p\n", haystack, needle);
+	char *result7 = ft_strnstr(haystack, needle, len7);
+	printf("Result: %p\n", result7 != NULL ? result7 : "NULL");
+	printf("Result: %s\n\n", result7 != NULL ? result7 : "NULL");
 
 	// Additional test cases (edge cases)
 	// printf("Enter a string to search: ");
