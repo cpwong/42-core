@@ -3,20 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void	print_array(char **array)
-{
-	int	i = 0;
-
-	while (array[i] != 0)
-	{
-		printf("\t...i = %d, array[i] = %s,\tptr = %p\tlen = %ld\n", 
-			i, array[i], &array[i], ft_strlen(array[i]));
-		i++;
-	}
-	printf("\t...i = %d, array[i] = %p,\tptr = %p\tlen = %ld\n\n", 
-		i, array[i], &array[i], ft_strlen(array[i]));
-}
-
 void	free_array(char **array)
 {
 	int	i = 0;
@@ -47,51 +33,89 @@ void	print_memory(char *str, int len)
 	printf("\n");
 }
 
-int	main(void)
+void ft_print_array(char **array)
 {
-	char source_0[] = "hello!";
-	printf("#0 str = %s\n", source_0);
-	char **result_0 = ft_split(source_0, ' ');
-	print_array(result_0);
-	free_array(result_0);
-	
-	// print_memory(result_0[0], 30);
+	printf("\tResult:\t\t");
+	{
+		if (array == NULL) 
+		{
+			printf("-NULL-\n");
+			return ; // Handle case of null array
+		}
+		for (int i = 0; array[i] != NULL; i++) {
+			printf("'%s', ", array[i]);
+		}
+		printf("\n");
+	}
+}
 
-	char source_1[] = "Andy             ";
-	printf("#1 str = %s\n", source_1);
-	char **result_1 = ft_split(source_1, ' ');
-	printf("\t#1 Array = %p, Expected: {'Andy', (null)}\n", result_1);
-	print_array(result_1);
-	print_memory(result_1[0], 10);
-	free_array(result_1);
 
-	char source_2[] = ("Andy,Bobby,Charlie");
-	printf("#2 str = %s\n", source_2);
-	char **result_2 = ft_split(source_2, ',');
-	printf("\t#2 Array = %p, Expected {'Andy', 'Bobby', 'Charlie', (null)}\n", result_2);
-	print_array(result_2);
-	print_memory(result_2[0], 100);
-	free_array(result_2);
+int	main (void)
+{
+	// char str3[] = "apple,banana,chicken";
+	char	**result;
 
-	char source_3[] = (",,,Andy|Bobby|Charlie,,,");
-	printf("#3 str = %s\n", source_3);
-	char **result_3 = ft_split(source_3, '|');
-	printf("\t#3 Array = %p, Expected {',,,Andy', 'Bobby', 'Charlie,,,', (null)}\n", result_3);
-	print_array(result_3);
-	free_array(result_3);
+	char str1[] = "hello!";
+	printf("Test #0 = str: %s\t c: '%c'\n", str1, '\0');
+	printf("\tExpected:\t'hello!'\n");
+	result = ft_split(str1, '\0');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
 
-	char source_4[] = "      split       this for   me  !       ";
-	printf("#4 str = %s, len = %ld\n", source_4, strlen(source_4));
-	char **result_4 = ft_split(source_4, ' ');
-	printf("\t#4 Array = %p \n", result_4);
-	print_array(result_4);
-	free_array(result_4);
+	printf("Test #1 = str: %s\t c: '%c'\n", str1, ' ');
+	printf("\tExpected:\t'hello!'\n");
+	result = ft_split(str1, ' ');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
 
-	char source_5[] = "lorem ipsum dolor sit amet";
-	printf("#5 str = %s, len = %ld\n", source_5, strlen(source_5));
-	char **result_5 = ft_split(source_5, ' ');
-	print_array(result_5);
-	free_array(result_5);
+	printf("Test #2 = str: %s\t c: '%c'\n", str1, ' ');
+	printf("\tExpected:\t'hello!'\n");
+	result = ft_split(str1, ' ');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+
+	char str2[] = "apple banana chicken";
+	printf("Test #3 = str: %s\t c: '%c'\n", str2, ' ');
+	printf("\tExpected:\t'apple', 'banana', 'chicken'\n");
+	result = ft_split(str2, ' ');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+
+	char str4[] = ",,,apple,banana,chicken,,,";
+	printf("Test #4 = str: %s\t c: '%c'\n", str4, ',');
+	printf("\tExpected:\t'apple', 'banana', 'chicken'\n");
+	result = ft_split(str4, ',');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+
+	char str5[] = ",,,apple banana chicken,,,";
+	printf("Test #5 = str: %s\t c: '%c'\n", str5, ',');
+	printf("\tExpected:\t'apple banana chicken'\n");
+	result = ft_split(str5, ',');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+
+	printf("Test #6 = str: %s\t c: '%c'\n", "", '\0');
+	printf("\tExpected:\t''\n");
+	result = ft_split(str5, '\0');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+
+	char str6[] = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	printf("Test #7 = str: %s\t c: '%c'\n", str6, '^');
+	printf("\tExpected:\t'1', '2a,', '3', '--h'\n");
+	result = ft_split(str6, '^');
+	ft_print_array(result);
+	free_array(result);
+	printf("\n");
+}
 
 	// User input case
 	// printf("Enter a string to split: ");
@@ -116,5 +140,5 @@ int	main(void)
 	// 	printf("NULL\n\n");
 	// }
 
-}
+// }
 

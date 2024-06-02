@@ -6,115 +6,88 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/31 16:22:48 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 00:42:19 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_words(char const *str, char c)
+size_t	ft_count_words(char const *str, char c)
 {
-	int		count;
-	int		in_word;
+	size_t	count;
 
 	count = 0;
-	in_word = 0;
-	while (*str != '\0')
+	while (*str)
 	{
-		if (*str == c)
+		if (*str != c)
 		{
-			in_word = 0;
-		}
-		else if (!in_word)
-		{
-			in_word = 1;
 			count++;
+			while (*str && *str != c)
+				str++;
 		}
-		str++;
+		else if (*str == c)
+			str++;
 	}
 	return (count);
 }
 
-void	ft_free_array(char **array)
+void	ft_free_array(char **array, size_t i)
 {
-	if (array == NULL)
+	if (!array)
 		return ;
-	while (*array != NULL)
+	while (i-- > 0)
 	{
-		free(*array);
-		array++;
-	}
-	free(array);
-}
-
-char	**ft_create_word(char **array, char const *str, int w_start, int w_len)
-{
-	int	j;
-	int	i;
-
-	i = 0;
-	j = 0;
-	while (array[i] != 0)
-		i++;
-	array[i] = ft_calloc(w_len + 1, sizeof(char));
-	if (array[i] == NULL)
-	{
-		ft_free_array(array);
-		return (NULL);
-	}
-	while (j < w_len)
-	{
-		array[i][j] = str[w_start + j];
-		j++;
-	}
-	array[i][j] = '\0';
-	array[i + 1] = NULL;
-	return (array);
-}
-
-char	**ft_process_words(char **array, char const *str, char c)
-{
-	int	i;
-	int	word_len;
-
-	i = 0;
-	word_len = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
+		if (array[i])
 		{
-			if (word_len > 0)
-			{
-				array = ft_create_word(array, str, i - word_len, word_len);
-				if (array == NULL)
-					return (NULL);
-				word_len = 0;
-			}
+			free(array[i]);
+			array[i] = NULL;
 		}
-		else
-			word_len++;
-		i++;
 	}
-	if (word_len > 0)
-		array = ft_create_word(array, str, i - word_len, word_len);
-	return (array);
+	if (array)
+	{
+		free (array);
+		array = NULL;
+	}
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split_words(char **dest, const char *str, char c, size_t words)
 {
-	int		num_words;
-	char	**result;
+	size_t	i;
+	size_t	w;
+	size_t	start;
 
-	if (s == NULL)
+	i = 0;
+	w = 0;
+	while (w < words)
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		start = i;
+		while (str[i] && str[i] != c)
+			i++;
+		dest[w] = ft_substr(str, start, i - start);
+		if (dest[w] == NULL)
+		{
+			ft_free_array(dest, words);
+			return (NULL);
+		}
+		w++;
+	}
+	dest[words] = NULL;
+	return (dest);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	size_t		num_words;
+	char		**result;
+
+	if (!str)
 		return (NULL);
-	num_words = ft_count_words(s, c);
-	result = ft_calloc(num_words + 1, sizeof(char *));
+	num_words = ft_count_words(str, c);
+	result = malloc((num_words + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	if (!ft_process_words(result, s, c))
-	{
-		ft_free_array(result);
-		return (NULL);
-	}
+	result = ft_split_words(result, str, c, num_words);
 	return (result);
 }
