@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/06/03 00:42:19 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:25:56 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split_words(char **dest, const char *str, char c, size_t words)
 		dest[w] = ft_substr(str, start, i - start);
 		if (dest[w] == NULL)
 		{
-			ft_free_array(dest, words);
+			ft_free_array(dest, w);
 			return (NULL);
 		}
 		w++;
