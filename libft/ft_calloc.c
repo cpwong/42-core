@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:05:55 by chenwong          #+#    #+#             */
-/*   Updated: 2024/06/01 20:46:36 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:28:18 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,8 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_memset(ptr, 0, count * size);
 	return (ptr);
 }
+
+/*
+	Allocates unused space for an array of {count} elements of {size} 
+	and init all bits to 0.
+*/

@@ -6,22 +6,22 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:31:48 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/29 16:55:24 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:51:28 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_copy_forward(unsigned char *dest,
-		const unsigned char *src, size_t n)
+static void	*ft_copy_forward(unsigned char *dest,
+	const unsigned char *src, size_t n)
 {
 	while (n-- > 0)
 		*dest++ = *src++;
 	return (dest);
 }
 
-void	*ft_copy_backward(unsigned char *dest,
-		const unsigned char *src, size_t n)
+static void	*ft_copy_backward(unsigned char *dest,
+	const unsigned char *src, size_t n)
 {
 	dest += n - 1;
 	src += n - 1;
@@ -42,3 +42,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_copy_backward((unsigned char *)dest, (const unsigned char *)src, n);
 	return (dest);
 }
+/*
+	Copies (n) bytes from memory (src) to (dest)
+*/

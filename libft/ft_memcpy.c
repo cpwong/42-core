@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:30:33 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/26 22:16:14 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:42:01 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*ptr_dst++ = *ptr_src++;
 	return (dst);
 }
+
+/*
+	Copy (n) bytes from memory ptr (src) to (dest)
+*/

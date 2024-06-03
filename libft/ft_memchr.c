@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:35:40 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/21 16:34:40 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:37:54 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*
+	Scans (n) bytes of memory pointed to (s) for the first instance of (c).
+*/

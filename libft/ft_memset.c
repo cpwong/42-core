@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 15:33:38 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/29 16:50:03 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:12:23 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,6 @@ void	*ft_memset(void *src, int c, size_t len)
 	}
 	return (src);
 }
+/*
+	Fills (n) bytes of memory (src) with constant byte (c)
+*/

@@ -6,13 +6,13 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:04:24 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/31 02:12:57 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:34:19 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')
@@ -46,3 +46,9 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
+
+/*
+	Converts the intial portion of a string
+	
+	Same as strltol(str, NULL, 10)
+*/

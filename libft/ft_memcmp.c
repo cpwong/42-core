@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:46:35 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/21 17:21:53 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:40:34 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,8 @@ int	ft_memcmp(void *dest, const void *src, size_t n)
 	}
 	return (0);
 }
+
+/*
+	Compares the first (n) bytes of memory areas (dest) and (src).
+	Returns an integer +/- if byte pair is different, or 0 if equal.
+*/

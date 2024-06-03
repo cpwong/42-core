@@ -6,7 +6,7 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:44:30 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/30 17:51:38 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:18:23 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+	Like stchr, but reversed!
+*/

@@ -6,14 +6,13 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:06:09 by chenwong          #+#    #+#             */
-/*   Updated: 2024/05/31 04:10:59 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:35:25 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_numlen(int n)
+static int	ft_numlen(int n)
 {
 	int	len;
 
@@ -31,21 +30,7 @@ int	ft_numlen(int n)
 	return (len);
 }
 
-char	*ft_check_limits(int n)
-{
-	char	*str;
-
-	str = NULL;
-	if (n == 0)
-		str = ft_strdup("0");
-	else if (n <= INT_MIN)
-		str = ft_strdup("-2147483648");
-	else if (n >= INT_MAX)
-		str = ft_strdup("2147483647");
-	return (str);
-}
-
-char	*ft_prep_str(int n, int len)
+static char	*ft_prep_str(int n, int len)
 {
 	char	*str;
 
@@ -86,3 +71,8 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+/*
+	Allocates and returns a string representing integer received
+	as argument (n).
+*/

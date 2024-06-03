@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 void uppercaseChar(unsigned int i, char *c) 

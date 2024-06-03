@@ -6,13 +6,13 @@
 /*   By: chenwong <chenwong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:14:12 by chenwong          #+#    #+#             */
-/*   Updated: 2024/06/03 12:25:56 by chenwong         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:12:20 by chenwong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_words(char const *str, char c)
+static size_t	ft_count_words(char const *str, char c)
 {
 	size_t	count;
 
@@ -31,7 +31,7 @@ size_t	ft_count_words(char const *str, char c)
 	return (count);
 }
 
-void	ft_free_array(char **array, size_t i)
+static void	ft_free_array(char **array, size_t i)
 {
 	if (!array)
 		return ;
@@ -50,7 +50,7 @@ void	ft_free_array(char **array, size_t i)
 	}
 }
 
-char	**ft_split_words(char **dest, const char *str, char c, size_t words)
+static char	**ft_split_words(char **dest, const char *str, char c, size_t words)
 {
 	size_t	i;
 	size_t	w;
