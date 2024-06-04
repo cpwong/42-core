@@ -37,7 +37,7 @@ void ft_print_array(char **array)
 {
 	printf("\tResult:\t\t");
 	{
-		if (array == NULL) 
+		if (array == NULL)
 		{
 			printf("-NULL-\n");
 			return ; // Handle case of null array
@@ -101,8 +101,8 @@ int	main (void)
 	free_array(result);
 	printf("\n");
 
-	printf("Test #6 = str: %s\t c: '%c'\n", "", '\0');
-	printf("\tExpected:\t''\n");
+	printf("Test #6 = str: %s\t c: '%c'\n", str5, ' ');
+	printf("\tExpected:\t',,,apple banana chicken,,,'\n");
 	result = ft_split(str5, '\0');
 	ft_print_array(result);
 	free_array(result);

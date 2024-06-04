@@ -3,19 +3,18 @@
 #include <assert.h>
 #include "../libft/libft.h"
 
-# define ft_memset memset
+// # define ft_memset memset
 
 // Function for easy comparison and printing of results
 void compare_and_print(const char *test_name, const char *expected, const char *result, size_t len) {
     if (memcmp(expected, result, len) == 0) {
-        printf("TEST PASSED: %s\n", test_name);
+        printf("Test PASSED: %s\n\n", test_name);
     } else {
-        printf("TEST FAILED: %s\n", test_name);
+        printf("Test FAILED: %s\n", test_name);
         printf("  Expected: [%.*s]\n", (int)len, expected);
-        printf("  Result:   [%.*s]\n", (int)len, result);
+        printf("  Result:   [%.*s]\n\n", (int)len, result);
     }
 }
-
 
 int main() {
     // Test Cases
@@ -44,6 +43,7 @@ int main() {
 
     char *str4 = NULL;
     char *expected4 = NULL;
+    printf("Testing: NULL Pointer Test -- should seg fault!!\n");
     ft_memset(str4, 'Z', 10); // Should seg fault
     assert(str4 == expected4);
     printf("TEST PASSED: NULL Pointer Test\n");

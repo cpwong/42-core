@@ -1,3 +1,4 @@
+#include "../libft/libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +9,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 // Test case 1: Apply uppercaseChar function to "hello"
 char uppercaseChar(unsigned int i, char c)
 {
+    (void)i;
     return c - 32; // Convert to uppercase
 }
 
@@ -24,6 +26,7 @@ void test_case_1()
 // Test case 2: Apply lowercaseChar function to "WORLD"
 char lowercaseChar(unsigned int i, char c)
 {
+    (void)i;
     return c + 32; // Convert to lowercase
 }
 

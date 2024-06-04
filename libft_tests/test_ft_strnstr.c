@@ -36,6 +36,7 @@ int main(void) {
 	size_t len4 = 2;
 	printf("Test Case 4a: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len4);
 	printf("str = %p\n", str4);
+	printf("Expected Output: NULL\n");
 	char *result4 = ft_strnstr(str4, tofind4, len4);
 	printf("Result: %p\n", result4 != NULL ? result4 : "NULL");
 	printf("Result: %s\n\n", result4 != NULL ? result4 : "NULL");
@@ -43,6 +44,7 @@ int main(void) {
 	size_t len5 = 3;
 	printf("Test Case 4b: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len5);
 	printf("str = %p, find = %p\n", str4, tofind4);
+	printf("Expected Output: xx\n");
 	char *result5 = ft_strnstr(str4, tofind4, len5);
 	printf("Result: %p\n", result5 != NULL ? result5 : "NULL");
 	printf("Result: %s\n\n", result5 != NULL ? result5 : "NULL");
@@ -50,6 +52,7 @@ int main(void) {
 	size_t len6 = 4;
 	printf("Test Case 4c: str = %s, tofind = %s, len = %zu\n", str4, tofind4, len6);
 	printf("str = %p, find = %p\n", str4, tofind4);
+	printf("Expected Output: xx\n");
 	char *result6 = ft_strnstr(str4, tofind4, len6);
 	printf("Result: %p\n", result6 != NULL ? result6 : "NULL");
 	printf("Result: %s\n\n", result6 != NULL ? result6 : "NULL");
@@ -59,6 +62,7 @@ int main(void) {
 	char needle[] = "xyz";
 	printf("Test Case 5: str = %s, tofind = %s, len = %zu\n", haystack, needle, len7);
 	printf("str = %p, find = %p\n", haystack, needle);
+	printf("Expected Output: NULL\n");
 	char *result7 = ft_strnstr(haystack, needle, len7);
 	printf("Result: %p\n", result7 != NULL ? result7 : "NULL");
 	printf("Result: %s\n\n", result7 != NULL ? result7 : "NULL");

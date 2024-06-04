@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 void printMemory(const void *ptr, size_t size) {
@@ -26,12 +26,7 @@ void printArray(const int *arr, size_t size) {
 
 int	main(void)
 {
-	printf("Function: void ft_bzero(void *src, size_t len)\n");
-	printf("Description: The ft_bzero() function erases the data in \nthe n bytes of the memory starting at the location pointed to by src, by writing zeros (bytes containing '\\0') to that area.\n");
-	printf("Input: A pointer to the memory area to be filled with zeros, \nand the number of bytes to fill\n");
-	printf("Output: None (modifies the memory area in-place)\n\n");
-
-	// Test Case 1: Testing with a null pointer
+	// // Test Case 1: Testing with a null pointer
 	// printf("Test Case 1: src = NULL, len = 5\n");
 	// printf("Expected Output: No memory area to modify\n");
 	// printf("Before: ");
@@ -40,7 +35,6 @@ int	main(void)
 
 	char buffer1[] = "hello";
 	printf("Test Case 2: src = \"hello\", len = 3\n");
-	printf("Expected Output: \"\\0\\0\\0\\x65\\x6C\\x6C\\x6F\" (ASCII representation of the null-terminated string \"\\0\\0\\0ello\")\n");
 	printf("Before: ");
 	printMemory(buffer1, sizeof(buffer1) - 1); // Exclude the null terminator from printing
 	printf("\n");
@@ -52,7 +46,6 @@ int	main(void)
 	// Test Case 3: Testing with overlapping memory areas
 	char buffer2[] = "abcdefgh";
 	printf("Test Case 3: src = \"abcdefgh\", len = 4 (Overlapping memory areas)\n");
-	printf("Expected Output: \"ab\\0\\0\\0\\x67\\x68\\x69\" (ASCII representation of the null-terminated string \"ab\\0\\0\\0ghi\")\n");
 	printf("Before: ");
 	printMemory(buffer2, sizeof(buffer2) - 1); // Exclude the null terminator from printing
 	printf("\n");
@@ -64,7 +57,6 @@ int	main(void)
 	// Test Case 4: Testing with edge case (zero-length memory area)
 	int buffer3[] = {1, 2, 3, 4, 5};
 	printf("Test Case 4: src = {1, 2, 3, 4, 5}, len = 0 (Edge case)\n");
-	printf("Expected Output: No change\n");
 	printf("Before: ");
 	printArray(buffer3, sizeof(buffer3));
 	printf("\n");
@@ -76,7 +68,6 @@ int	main(void)
 	// Test Case 5: Testing with different data types and sizes
 	double buffer4[3] = {3.14, 2.718, 1.618};
 	printf("Test Case 5: src = {3.14, 2.718, 1.618}, len = sizeof(buffer4)\n");
-	printf("Expected Output: \"\\0\\0\\0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\" (ASCII representation of the null-terminated string \"\\0\\0\\0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\")\n");
 	printf("Before: ");
 	printMemory(buffer4, sizeof(buffer4));
 	printf("\n");

@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -7,7 +7,7 @@
 int main(void)
 {
 
-	printf("Test Case 1: nmemb = 5, size = sizeof(int)\n");
+	printf("Test Case 1: nmemb = 5, size = %ld\n", sizeof(int));
 	int *ptr1 = (int *)ft_calloc(5, sizeof(int));
 	if (ptr1 != NULL) {
 		printf("Allocated memory (hex): ");
@@ -21,7 +21,7 @@ int main(void)
 	}
 	printf("\n");
 
-	printf("Test Case 2: nmemb = 3, size = sizeof(char)\n");
+	printf("Test Case 2: nmemb = 3, size = %ld\n", sizeof(char));
 	char *ptr2 = (char *)ft_calloc(3, sizeof(char));
 	if (ptr2 != NULL) {
 		printf("Allocated memory (hex): ");

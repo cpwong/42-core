@@ -1,8 +1,8 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 #include <string.h>
 
-#define ft_memchr memchr
+// #define ft_memchr memchr
 
 int main(void) {
 

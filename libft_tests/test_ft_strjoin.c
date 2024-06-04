@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 int	main(void)
@@ -68,7 +68,7 @@ int	main(void)
 	char longStr2[1000000] = "b";
 	char *longResult = ft_strjoin(longStr1, longStr2);
 	printf("Test Case 6: Concatenating two very long strings\n");
-	printf("Expected Output: A string of length 2000000 (approx.)\n\n");
+	printf("Expected Output: A string of length 2000000 (approx.)\n");
 	if (longResult != NULL) {
 		printf("Result length: %zu\n\n", ft_strlen(longResult));
 		free(longResult);
@@ -79,7 +79,7 @@ int	main(void)
 	// Test case: Passing NULL as both input strings
 	char *nullResult = ft_strjoin(NULL, NULL);
 	printf("Test Case 7: Passing NULL as both input strings\n");
-	printf("Expected Output: NULL\n\n");
+	printf("Expected Output: NULL\n");
 	if (nullResult != NULL) {
 		printf("Result: %s\n\n", nullResult);
 		free(nullResult);
